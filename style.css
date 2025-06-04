@@ -2,12 +2,17 @@
   outline: 1px solid red;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Reset & base styles */
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  margin: 0px!important;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -16,17 +21,17 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: transparent; /* or #f8f9fa for your page background */
+  width: 100%; /* <-- this was missing */
+  background: transparent; /* or use a color like #f8f9fa */
 }
 
 body {
   min-height: 100vh;
   box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-#lottie-background{
-  margin-top: -20px;
-}
+
 *,
 *::before,
 *::after {
@@ -81,47 +86,59 @@ header > * {
 }
 
 /* Header + Hero full viewport with Lottie background */
+/* Section wrapper with full screen width + height */
 .header-hero-wrapper {
   position: relative;
-  width: 100%;
-  height: 100dvh;
-  margin: 0;
-  padding: 0;
+  width: 100%;         /* or use 100vw if you're careful with scrollbars */
+  height: 100vh;
   overflow: hidden;
-  background-color: transparent; /* No fallback background */
 }
 
+/* Lottie background should cover the full area */
 #lottie-background {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%;          /* Avoid using 100vw unless needed */
   height: 100%;
   z-index: 0;
+  pointer-events: none;
 }
 
-
-/* Content above animation */
+/* Hero and header content stays on top of Lottie */
 .header-hero-content {
   position: relative;
-  z-index: 2;
-  color: white;
-  padding: 20px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  z-index: 1;
+  width: 100%;
 }
 
+/* Make sure header container goes full width */
+.full-width-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 20px; /* Optional for inner spacing */
+}
 
 /* Header container */
+/* Make header itself full width */
+header {
+  width: 100%;
+  background: transparent; /* Or any background */
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem; /* horizontal padding */
+/* Make header content go full width */
+.header-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px; /* optional spacing inside */
+  box-sizing: border-box;
 }
 
 .logo img {
