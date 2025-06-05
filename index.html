@@ -11,7 +11,7 @@
 
 <!-- Header -->
 <header>
-  <div class="container header-container">
+  <div class="header-container">
     <a href="index.html" class="logo">
       <img src="assets/Untitled-design-29-300x111.png.webp" alt="FormLLC Logo" />
     </a>
@@ -42,6 +42,7 @@
     <div class="rocket-image">
       <img src="assets/freepik-landing-page-template-universe-min.png" alt="Rocket" />
     </div>
+
 
     <div class="container hero-content">
       <h2>Start Your US Business Today</h2>
@@ -102,5 +103,21 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+  const rocket = document.querySelector(".rocket-image");
+
+  rocket.addEventListener("mousemove", (e) => {
+    const rect = rocket.getBoundingClientRect();
+    const offsetX = (e.clientX - rect.left - rect.width / 2) / 20; // Sensitivity
+    const offsetY = (e.clientY - rect.top - rect.height / 2) / 20;
+
+    rocket.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+  });
+
+  rocket.addEventListener("mouseleave", () => {
+    rocket.style.transform = `translate(-50%, -50%)`; // Reset to original
+  });
+</script>
+
 </body>
 </html>

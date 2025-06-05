@@ -10,7 +10,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  overflow-x: hidden;
+  
 }
 
 /* Header */
@@ -22,38 +22,47 @@ header {
   width: 100%;
   z-index: 1000;
   padding: 20px 0;
-  border-bottom: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-header h1 {
-  float: left;
-  color: #fff;
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between; /* Logo on left, nav on right */
+  align-items: center;            /* Vertically center content */
+  height: 100px; /* Set a consistent height for vertical centering */
 }
 
-nav {
-  float: right;
+.logo img {
+  height: 60px; /* Adjust as needed */
+  display: block;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-header::after {
-  content: "";
-  display: block;
-  clear: both;
+nav a:hover {
+  color: #ffd700;
 }
+
+
 
 /* Hero Section */
-/* Hero Section Styling */
+
 .hero {
   position: relative;
   width: 100%;
@@ -75,19 +84,25 @@ header::after {
 
 .rocket-image {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Perfect center alignment */
+  transform: translate(-50%, -50%);
   z-index: 1;
-  pointer-events: none;
+  transition: transform 0.3s ease;
+  pointer-events: auto; /* Needed for hover to work */
+}
+
+.rocket-image:hover img {
+  transform: rotate(-45deg) scale(1.05);
 }
 
 .rocket-image img {
-  height: 400px;      /* Adjust size as needed */
+  height: 350px;
   width: auto;
   display: block;
   margin: 0 auto;
-  transform: rotate(-45deg); /* Ensure it's upright */
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
 }
 
 .hero-content {
