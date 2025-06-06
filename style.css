@@ -191,7 +191,8 @@ section {
 .launch-company h3 {
   color: #002366; /* deep blue */
   font-weight: bold;
-  font-size: 3rem; /* increased size */
+  font-size: 4rem; /* increased size */
+  line-height: 1.1;
   margin-bottom: 25px;
 }
 
@@ -203,7 +204,7 @@ section {
 
 .btn-quote {
   display: inline-block;
-  background-color: orange;
+  background-color: rgba(219, 130, 13, 0.776);
   color: white;
   padding: 12px 30px;
   border-radius: 15px;
@@ -215,6 +216,143 @@ section {
 
 .btn-quote:hover {
   background-color: darkorange;
+}
+
+/* Our Services Section */
+.our-services {
+  background-color: #f4f4f9;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.our-services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* horizontal padding for side spacing */
+}
+
+.section-label {
+  color: #ff6f00; /* orange color */
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.our-services h3 {
+  color: #002366; /* Deep blue */
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.our-services .description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  background: #f5f0ff; /* Light purple background */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center; /* Center content */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+/* Updated styles for your img icons */
+.service-icon {
+  margin-bottom: 16px;
+  color: #ff6f00;
+}
+
+.service-icon i {
+  font-size: 3rem;
+}
+
+.service-item h4 {
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.2; /* tighter heading lines */
+  margin: 4px 0 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 0;
+}
+
+.service-link {
+  font-size: 1.2rem;
+  color: #ff6f00;
+  margin-top: 12px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.our-services .btn {
+  background-color: #ff6f61;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.our-services .btn:hover {
+  background-color: #e05a4f;
+}
+
+/* Start Business Section */
+.start-business-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.start-business-text {
+  flex: 1;
+}
+
+.start-business-text h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #002366;
+  margin-bottom: 20px;
+}
+
+.start-business-text p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.start-business-image {
+  flex: 1;
+}
+
+.start-business-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Removed border-radius and box-shadow for clean image */
 }
 
 /* Footer */
@@ -264,5 +402,22 @@ footer a {
     transform: translate(-50%, -50%);
     font-size: 1.8rem;
     text-align: center;
+  }
+
+  /* Responsive for Start Business Section */
+  .start-business-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .start-business-text,
+  .start-business-image {
+    flex: unset;
+  }
+
+  .start-business-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
 }
