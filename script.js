@@ -48,4 +48,44 @@ faqQuestions.forEach((question) => {
   });
 });
 
+console.log("Script loaded"); // Confirm script is running
+
+const counters = document.querySelectorAll('.counter-number');
+let counted = false;
+
+function animateCounters() {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const speed = 200;
+    const increment = Math.ceil(target / speed);
+
+    function update() {
+      const current = parseInt(counter.innerText.replace(/\D/g, ''), 10); // clean innerText
+      if (current < target) {
+        counter.innerText = current + increment;
+        setTimeout(update, 20);
+      } else {
+        counter.innerText = target;
+      }
+    }
+
+    update();
+  });
+}
+
+const counterSection = document.querySelector('.counter-section');
+
+if (counterSection && counters.length > 0) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counted) {
+        animateCounters();
+        counted = true;
+        observer.disconnect(); // Run only once
+      }
+    });
+  }, { threshold: 0.5 }); // Trigger when 50% of section is visible
+
+  observer.observe(counterSection);
+}
 
