@@ -554,7 +554,13 @@ footer a {
 
 .pricing-section {
   padding: 80px 20px;
-  background: #fefefe;
+  position: relative;
+  /* Background image with blue-purple gradient overlay */
+  background:
+    linear-gradient(135deg, rgba(0, 99, 248, 0.6), rgba(208, 6, 208, 0.6)),
+    url('assets/color-overload-gradients-artwork-kit-2-min.jpg.webp') no-repeat center center;
+  background-size: cover;
+  color: white; /* Default text color white */
 }
 
 .pricing-container {
@@ -563,14 +569,23 @@ footer a {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  position: relative; /* To stack above any overlays if added later */
+  z-index: 2;
 }
 
 .pricing-info {
   flex: 1;
 }
 
+/* Headings and paragraph colors changed to white */
+.pricing-info h2,
+.pricing-info h4,
+.pricing-info p,
+.pricing-info ul li {
+  color: white;
+}
+
 .pricing-info h2 {
-  color: #002366;
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
@@ -583,7 +598,6 @@ footer a {
 
 .pricing-info ul li {
   margin-bottom: 10px;
-  color: #444;
   font-size: 1rem;
 }
 
@@ -599,14 +613,15 @@ footer a {
 
 .tab-btn {
   padding: 12px 20px;
-  background: #eee;
+  background: rgba(255 255 255 / 0.3); /* semi-transparent white */
   border: none;
   cursor: pointer;
   font-weight: bold;
   border-radius: 5px;
   flex: 1;
   margin-right: 10px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+  color: white;
 }
 
 .tab-btn:last-child {
@@ -614,8 +629,9 @@ footer a {
 }
 
 .tab-btn.active {
-  background: #002366;
-  color: #fff;
+  background: white;
+  color: purple;
+  font-weight: bold;
 }
 
 .plan-details-container {
@@ -631,16 +647,17 @@ footer a {
 }
 
 .plan-box {
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255 255 255 / 0.4);
   border-radius: 10px;
   padding: 30px;
-  background: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  background: rgba(255 255 255 / 0.15); /* translucent white */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   text-align: center;
+  color: white;
 }
 
 .plan-box h3 {
-  background: #002366;
+  background: purple;
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -657,7 +674,7 @@ footer a {
 .plan-box .sub-price {
   display: block;
   font-size: 1.2rem;
-  color: #888;
+  color: #ddd;
 }
 
 .btn-pay {
@@ -668,4 +685,177 @@ footer a {
   margin-top: 20px;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pay:hover {
+  background-color: #e65c00;
+}
+
+/* Testimonials */
+
+.testimonials-section {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  position: relative; /* Enables absolutely positioned buttons inside */
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.testimonials-slider {
+  overflow: hidden;
+  position: relative;
+  padding: 0 60px; /* Space for outside buttons */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 33.3333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.testimonial-box {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 35, 102, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #002366;
+  margin-bottom: 15px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #002366;
+  margin-bottom: 15px;
+}
+
+.testimonial-review {
+  font-style: italic;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #002366;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  opacity: 1;
+}
+
+.slider-btn.prev {
+  left: 0;
+}
+
+.slider-btn.next {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 100%;
+    padding: 0 5px;
+  }
+
+  .testimonials-slider {
+    padding: 0 40px;
+  }
+
+  .slider-btn.prev {
+    left: -10px;
+  }
+
+  .slider-btn.next {
+    right: -10px;
+  }
+}
+
+ /* Form Last */
+
+.contact-section {
+  max-width: 600px;
+  margin-top: 10px;  /* decreased top margin */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px; /* keep bottom margin */
+  padding: 0 20px;
+  text-align: center;
+  color: #002366;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus {
+  border-color: #ff6f00; /* Orange focus */
+}
+
+.contact-form button {
+  padding: 14px;
+  background-color: #ff6f00; /* Orange */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e65a00; /* Darker orange on hover */
 }
