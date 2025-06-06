@@ -176,6 +176,84 @@
   </div>
 </section>
 
+<!-- Pricing Section -->
+<section class="pricing-section">
+  <div class="pricing-container">
+
+    <!-- Left Side Content -->
+    <div class="pricing-info">
+      <h2>Our Pricing is Affordable</h2>
+      <p>Offering exceptional value without compromising on quality.</p>
+      <h4>How it works?</h4>
+      <ul class="how-it-works-list">
+        <li><strong>Fill Out Online Form:</strong> Submit LLC details.</li>
+        <li><strong>Company Name:</strong> Provide desired LLC name.</li>
+        <li><strong>Business Industry:</strong> Select your business category.</li>
+        <li><strong>Member Information:</strong> List key LLC members.</li>
+        <li><strong>Document Preparation:</strong> We handle legal paperwork.</li>
+        <li><strong>State Filing:</strong> LLC registration in 24 hours.</li>
+        <li><strong>EIN & Bank Support:</strong> EIN issuance & bank setup.</li>
+      </ul>
+    </div>
+
+    <!-- Right Side Tabs and Plans -->
+    <div class="pricing-plans">
+      <div class="plan-tabs">
+        <button class="tab-btn" data-plan="starter">Starter</button>
+        <button class="tab-btn active" data-plan="standard">Standard</button>
+        <button class="tab-btn" data-plan="pro">Pro</button>
+      </div>
+
+      <div class="plan-details-container">
+        <!-- Starter Plan -->
+        <div class="plan-details" id="starter">
+          <div class="plan-box starter">
+            <h3>Starter</h3>
+            <p>For business who need EIN.</p>
+            <div class="price">
+              <span class="main-price">$59</span>
+              <span class="sub-price">$50</span>
+            </div>
+            <p>Obtain your EIN within 7 working days.</p>
+            <p>Confirmation Letter 147-C</p>
+            <a href="#" class="btn-pay">Pay Now</a>
+          </div>
+        </div>
+
+        <!-- Standard Plan (default visible) -->
+        <div class="plan-details active" id="standard">
+          <div class="plan-box standard">
+            <h3>Standard</h3>
+            <p>Perfect for fast LLC setup.</p>
+            <div class="price">
+              <span class="main-price">$199</span>
+              <span class="sub-price">$179</span>
+            </div>
+            <p>Includes EIN, state filing & docs.</p>
+            <p>Fast 24hr turnaround.</p>
+            <a href="#" class="btn-pay">Pay Now</a>
+          </div>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="plan-details" id="pro">
+          <div class="plan-box pro">
+            <h3>Pro</h3>
+            <p>For full compliance and support.</p>
+            <div class="price">
+              <span class="main-price">$399</span>
+              <span class="sub-price">$350</span>
+            </div>
+            <p>Includes everything in Standard + extra docs.</p>
+            <p>Priority support & expedited filing.</p>
+            <a href="#" class="btn-pay">Pay Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -185,23 +263,6 @@
     </div>
   </footer>
 
-<script src="js/script.js"></script>
-  
-  <script>
-  const rocket = document.querySelector(".rocket-image");
-
-  rocket.addEventListener("mousemove", (e) => {
-    const rect = rocket.getBoundingClientRect();
-    const offsetX = (e.clientX - rect.left - rect.width / 2) / 20; // Sensitivity
-    const offsetY = (e.clientY - rect.top - rect.height / 2) / 20;
-
-    rocket.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
-  });
-
-  rocket.addEventListener("mouseleave", () => {
-    rocket.style.transform = `translate(-50%, -50%)`; // Reset to original
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

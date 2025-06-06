@@ -1,52 +1,20 @@
 // JavaScript for FormLLC Website
 
-// Testimonial slider logic
-let currentSlide = 0;
-const testimonials = document.querySelectorAll('.testimonial-slide');
-const totalSlides = testimonials.length;
+ <script>
+  const rocket = document.querySelector(".rocket-image");
 
-/**
- * Show the testimonial slide based on index.
- * @param {number} index
- */
-function showSlide(index) {
-  testimonials.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
+  rocket.addEventListener("mousemove", (e) => {
+    const rect = rocket.getBoundingClientRect();
+    const offsetX = (e.clientX - rect.left - rect.width / 2) / 20; // Sensitivity
+    const offsetY = (e.clientY - rect.top - rect.height / 2) / 20;
+
+    rocket.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
   });
-}
 
-// Initialize first slide
-showSlide(currentSlide);
-
-// Event listeners for testimonial buttons
-document.getElementById('prev-testimonial').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
-});
-
-document.getElementById('next-testimonial').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-});
-
-// FAQ accordion logic
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach((question) => {
-  question.addEventListener('click', () => {
-    const isActive = question.classList.contains('active');
-
-    // Close all FAQ items
-    faqQuestions.forEach(q => q.classList.remove('active'));
-    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-
-    // Toggle clicked FAQ item
-    if (!isActive) {
-      question.classList.add('active');
-      question.nextElementSibling.classList.add('active');
-    }
+  rocket.addEventListener("mouseleave", () => {
+    rocket.style.transform = `translate(-50%, -50%)`; // Reset to original
   });
-});
+</script>
 
 console.log("Script loaded"); // Confirm script is running
 
@@ -88,4 +56,23 @@ if (counterSection && counters.length > 0) {
 
   observer.observe(counterSection);
 }
+
+<!-- JavaScript for tab switching -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const planDetails = document.querySelectorAll('.plan-details');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        planDetails.forEach(plan => plan.classList.remove('active'));
+
+        this.classList.add('active');
+        const target = this.getAttribute('data-plan');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  });
+</script>
 

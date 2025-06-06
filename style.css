@@ -550,3 +550,122 @@ footer a {
   }
 }
 
+/* Our Pricing is Affordable Section */
+
+.pricing-section {
+  padding: 80px 20px;
+  background: #fefefe;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pricing-info {
+  flex: 1;
+}
+
+.pricing-info h2 {
+  color: #002366;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.pricing-info ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pricing-info ul li {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.pricing-plans {
+  flex: 1;
+}
+
+.plan-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  flex: 1;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+}
+
+.tab-btn:last-child {
+  margin-right: 0;
+}
+
+.tab-btn.active {
+  background: #002366;
+  color: #fff;
+}
+
+.plan-details-container {
+  position: relative;
+}
+
+.plan-details {
+  display: none;
+}
+
+.plan-details.active {
+  display: block;
+}
+
+.plan-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.plan-box h3 {
+  background: #002366;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.plan-box .price {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: #ff6f00;
+}
+
+.plan-box .sub-price {
+  display: block;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.btn-pay {
+  background: #ff6f00;
+  color: #fff;
+  padding: 10px 25px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
