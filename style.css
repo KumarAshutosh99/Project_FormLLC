@@ -10,7 +10,6 @@ body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  
 }
 
 /* Header */
@@ -28,15 +27,15 @@ header {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-between; /* Logo on left, nav on right */
-  align-items: center;            /* Vertically center content */
-  height: 100px; /* Set a consistent height for vertical centering */
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
 
 .logo img {
-  height: 60px; /* Adjust as needed */
+  height: 60px;
   display: block;
 }
 
@@ -59,10 +58,7 @@ nav a:hover {
   color: #ffd700;
 }
 
-
-
 /* Hero Section */
-
 .hero {
   position: relative;
   width: 100%;
@@ -84,12 +80,12 @@ nav a:hover {
 
 .rocket-image {
   position: absolute;
-  top: 70%;
+  top: 70%; /* moved up to overlay on heading */
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 3; /* higher than heading */
   transition: transform 0.3s ease;
-  pointer-events: auto; /* Needed for hover to work */
+  pointer-events: auto;
 }
 
 .rocket-image:hover img {
@@ -136,6 +132,24 @@ nav a:hover {
   background-color: #e05a4f;
 }
 
+.hero-heading {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ✅ Reduce vertical gap between "WELCOME TO" and "FORMLLC" */
+.hero-heading h1 {
+  margin: 0;
+  line-height: 1.1;
+}
 
 /* Sections */
 section {
@@ -164,6 +178,43 @@ section {
 .states p {
   font-size: 20px;
   font-weight: bold;
+}
+
+/* Launch a Company Section Styles */
+.launch-company {
+  padding-left: 20px;  /* add horizontal padding */
+  padding-right: 20px; /* add horizontal padding */
+  max-width: 900px;    /* optional max width for better readability */
+  margin: 0 auto;      /* center the section */
+}
+
+.launch-company h3 {
+  color: #002366; /* deep blue */
+  font-weight: bold;
+  font-size: 3rem; /* increased size */
+  margin-bottom: 25px;
+}
+
+.launch-company p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.btn-quote {
+  display: inline-block;
+  background-color: orange;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-quote:hover {
+  background-color: darkorange;
 }
 
 /* Footer */
@@ -200,5 +251,18 @@ footer a {
 
   .rocket-image img {
     width: 150px;
+  }
+
+  .rocket-image {
+    top: 55%; /* adjusted for mobile overlay */
+  }
+
+  .hero-heading {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    text-align: center;
   }
 }
